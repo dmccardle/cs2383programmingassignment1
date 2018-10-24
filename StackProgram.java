@@ -18,8 +18,9 @@ public class StackProgram {
                 s.push(input);
             } else if(input < 0) {
                 int top = s.top();
+                // Checks to make sure an "exception" wasn't thrown. (I return -1 if the stack is full)
                 if(top > 0)
-                    System.out.println("Top of stack: " + s.top());
+                    System.out.println("Top of stack: " + top);
             } else {
                 s.pop();
             }

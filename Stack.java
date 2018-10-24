@@ -1,22 +1,26 @@
 public class Stack {
-    private int t;
+    private int top;
     private int[] A;
 
+    /**
+     * Intializes the stack (equivalent to stack_init())
+     * @param size the size of the array
+     */
     public Stack(int size) {
-        t = -1;
+        top = -1;
         A = new int[size];
     }
 
     public boolean empty() {
-        return t == -1;
+        return top == -1;
     }
 
     public void push(int x) {
-        if(t == A.length)
+        if(top == A.length)
             System.out.println("Error - stack is full");
         else {
-            t = t+1;
-            A[t] = x;
+            top = top+1;
+            A[top] = x;
         }
     }
     
@@ -25,7 +29,7 @@ public class Stack {
             System.out.println("Error - stack is empty");
         }
         else
-            t = t-1;
+            top = top-1;
     }
 
     public int top() {
@@ -34,6 +38,6 @@ public class Stack {
             return -1;
         }
         else
-            return A[t];
+            return A[top];
     }
 }
